@@ -7,7 +7,7 @@ nth(123,2) -> 1
 nth(-123,2) -> 1
 */
   public static int nth(int n, int col) {
-
+    return 0;
   }
 /*
 return the number of digits in n.
@@ -17,7 +17,7 @@ length(-10) -> 2
 length(5112) -> 4
 */
   public static int length(int n) {
-
+    return 0;
   }
 /*
 This requires your MyLinkedList file to be present locally, but please do not commit this extra file.
