@@ -23,11 +23,10 @@ length(-10) -> 2
 length(5112) -> 4
 */
   public static int length(int n) {
-    int ans = (Integer.toString(n).length());
-    if (Integer.toString(n).charAt(0) == '-') {
-      return (ans - 1);
+    if (n == 0) {
+      return 1;
     } else {
-      return ans;
+      return ((int)(Math.log10(Math.abs(n)) + 1));
     }
   }
 /*
@@ -56,15 +55,14 @@ Up until now, there are no methods that care about the contents of your MyLinked
     for(int i = 0; i < 10; i++) {
       buckets[i] = new SortableLinkedList();
     }
-    int largestLength = 0;
+    int largestLength = 1;
     int dataLength = data.size();
-    for (int i = 0; i < dataLength; i++) {
-      largestLength = Math.max(length(data.get(i)), largestLength);
-    }
     for (int i = 0; i < largestLength; i++) {
       for (int j = 0; j < dataLength; j++) {
-        buckets[nth(data.get(0), i)].add(data.get(0));
-        data.remove(0);
+        if (i == 0) {
+          largestLength = Math.max(length(data.get(0)), largestLength);
+        }
+        buckets[nth(data.get(0), i)].add(data.remove(0));
       }
       merge(data, buckets);
     }
