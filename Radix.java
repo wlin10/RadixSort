@@ -36,6 +36,22 @@ Write and thoroughly test these methods!
 Up until now, there are no methods that care about the contents of your MyLinkedList. It does NOT matter that they are Strings.
 */
   public static void merge(MyLinkedList original, MyLinkedList[]buckets) {
+    for (int i = 0; i < buckets.length; i++) {
+      original.extend(buckets[i]);
+    }
+  }
+
+  public static void merge(SortableLinkedList original, SortableLinkedList[]buckets) {
+    for (int i = 0; i < buckets.length; i++) {
+      original.extend(buckets[i]);
+    }
+  }
+
+  public static void radixSortSimple(SortableLinkedList data) {
+
+  }
+
+  public static void radixSort(SortableLinkedList data) {
 
   }
 
