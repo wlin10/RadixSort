@@ -56,11 +56,17 @@ Up until now, there are no methods that care about the contents of your MyLinked
       buckets[i] = new SortableLinkedList();
     }
     int largestLength = 1;
+    int largestNum = 0;
     int dataLength = data.size();
     for (int i = 0; i < largestLength; i++) {
       for (int j = 0; j < dataLength; j++) {
         if (i == 0) {
-          largestLength = Math.max(length(data.get(0)), largestLength);
+          if (largestNum < data.get(0)) {
+            largestNum = data.get(0);
+          }
+          if (j == dataLength - 1) {
+            largestLength = length(largestNum);
+          }
         }
         buckets[nth(data.get(0), i)].add(data.remove(0));
       }
