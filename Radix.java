@@ -53,7 +53,7 @@ Up until now, there are no methods that care about the contents of your MyLinked
 
   public static void radixSortSimple(SortableLinkedList data) {
     SortableLinkedList[] buckets = new SortableLinkedList[10];
-    for(int i = 0; i < buckets.length; i++) {
+    for(int i = 0; i < 10; i++) {
       buckets[i] = new SortableLinkedList();
     }
     int largestLength = 0;
