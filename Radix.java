@@ -59,7 +59,7 @@ Up until now, there are no methods that care about the contents of your MyLinked
     int largestLength = 0;
     int dataLength = data.size();
     for (int i = 0; i < dataLength; i++) {
-      largestLength = Math.max(length(i), largestLength);
+      largestLength = Math.max(length(data.get(i)), largestLength);
     }
     for (int i = 0; i < largestLength; i++) {
       for (int j = 0; j < dataLength; j++) {
