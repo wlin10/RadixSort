@@ -52,6 +52,18 @@ Up until now, there are no methods that care about the contents of your MyLinked
     for(int i = 0; i < buckets.length; i++) {
       buckets[i] = new SortableLinkedList();
     }
+    int largestLength = 0;
+    int dataLength = data.size();
+    for (int i = 0; i < dataLength; i++) {
+      largestLength = Math.max(length(i), largestLength);
+    }
+    for (int i = 0; i < largestLength; i++) {
+      for (int j = 0; j < dataLength; j++) {
+        buckets[nth(data.get(0), i)].add(data.get(0));
+        data.remove(0);
+      }
+      merge(data, buckets);
+    }
   }
 
   public static void radixSort(SortableLinkedList data) {
