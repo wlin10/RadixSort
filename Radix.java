@@ -8,8 +8,12 @@ nth(123,2) -> 1
 nth(-123,2) -> 1
 */
   public static int nth(int n, int col) {
-    double ans = (n/(Math.pow(10.0, col)));
-    return ((int)(Math.abs(ans) % 10));
+    if (col >= length(n)) {
+      return 0;
+    } else {
+      double ans = (n/(Math.pow(10.0, col)));
+      return ((int)(Math.abs(ans) % 10));
+    }
   }
 /*
 return the number of digits in n.
