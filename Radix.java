@@ -9,7 +9,7 @@ nth(-123,2) -> 1
 */
   public static int nth(int n, int col) {
     double ans = (n/(Math.pow(10.0, col)));
-    return ((int)(ans % 10));
+    return ((int)(Math.abs(ans) % 10));
   }
 /*
 return the number of digits in n.
@@ -48,7 +48,10 @@ Up until now, there are no methods that care about the contents of your MyLinked
   }
 
   public static void radixSortSimple(SortableLinkedList data) {
-
+    SortableLinkedList[] buckets = new SortableLinkedList[10];
+    for(int i = 0; i < buckets.length; i++) {
+      buckets[i] = new SortableLinkedList();
+    }
   }
 
   public static void radixSort(SortableLinkedList data) {
